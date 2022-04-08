@@ -1,0 +1,19 @@
+---
+- name: Install Chrony
+  dnf:
+    name: chrony
+    state: latest
+- name: Start chrony
+  ansible.builtin.service:
+    name: chrony
+    enabled: yes
+    state: started
+- name: Install firewalld
+  dnf:
+    name: firewalld
+    state: latest
+- name: start firewall
+  ansible.builtin.service:
+    name: firewalld
+    enabled: yes
+    state: started
